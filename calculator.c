@@ -11,7 +11,15 @@ int calculate_result(struct Reader *reader) {
         if (head->tok_type != TOK_NUM) {
             // this is an operation:
             struct Token *op = head;
+            if (!head->next) {
+                reader->had_error = true;
+                return -1;
+            }
             struct Token *val_a = head->next;
+            if (!head->next->next) {
+                reader->had_error = true;
+                return -1;
+            }
             struct Token *val_b = head->next->next;
 
             struct Token *new_token = malloc(sizeof(struct Token));
@@ -21,6 +29,10 @@ int calculate_result(struct Reader *reader) {
             }
             switch (op->tok_type) {
                 case TOK_ADD:
+                    if (!val_b) {
+                        reader->had_error = true;
+                        return -1;
+                    }
                     new_token->val = val_a->val + val_b->val;
                     break;
                 case TOK_DIV:

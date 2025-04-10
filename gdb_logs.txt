@@ -1,0 +1,10 @@
+   15  bt
+   16  p head->next
+   17  p *head
+   18  q
+   19  run testcases/multi_op_err.s
+   20  p val_b->val
+   21  p val_a->val
+   22  q
+   23  history
+   24  show commands

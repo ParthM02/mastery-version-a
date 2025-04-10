@@ -1,0 +1,30 @@
+  503  git clone git@github.com:ParthM02/mastery-version-a.git
+  504  cd mastery-version-a
+  505  make
+  506  mini_ci
+  507  mini_ci basic_add.s
+  508  make clean
+  509  make check
+  510  make clean
+  511  make debug
+  512  gdb mini_ci
+  513  mini_ci_reference testcases/err_ops.s
+  514  make clean
+  515  make
+  516  make check
+  517  make clean
+  518  make debug
+  519  gdb mini_ci
+  520  make clean
+  521  make checks
+  522  make check
+  523  make clean
+  524  make debug
+  525  gdb mini_ci
+  526  make clean
+  527  make
+  528  make check
+  529  make
+  530  make check
+  531  show history
+  532  history
